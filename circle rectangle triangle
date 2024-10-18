@@ -1,0 +1,42 @@
+#include<stdio.h>
+void circle();
+void rectangle(int);
+void triandle(int,int,int);
+void circle()
+{
+ int r;
+ printf("enter radius");
+ scanf("%d",&r);
+float res=3.14*r*r;
+printf("the area of %f",res);
+}
+void rectangle(int length)
+{
+int breadth;
+printf("enter breadth");
+scanf("%d",&breadth);
+printf("the area is %d",length*breadth);
+}
+void triangle(int a,int b,int c)
+{
+printf("the perimeter is %d",a+b+c);
+}
+void main()
+{
+ int a;
+ printf("\n1.cricle");
+printf("\n2.rectangle");
+printf("\n3.triangle");
+printf("enter your choice");
+scanf("%d ",&a);
+switch(a)
+{
+case 1:circle();
+     break;
+case 2:rectangle();
+     break;
+case 3:triangle();
+     break;
+default:printf("invalid choice");
+}
+}
