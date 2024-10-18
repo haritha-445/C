@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+int ecet(int);
+int ece (int);
+int ecet (int n)
+{
+ return ece(n+10);
+}
+int ece (int y)
+{
+int res=y*10;
+return res+2;
+}
+void main
+{
+int a=ecet(5);
+printf("%d",a);
+}
