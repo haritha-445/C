@@ -1,0 +1,28 @@
+#include <stdio.h>
+int count_digit_occurrences(int num, int digit)
+{
+    int count = 0;
+    while (num != 0)
+        {
+        int remainder = num % 10;
+        if (remainder == digit)
+            {
+            count++;
+        }
+        num/=10;
+    }
+    return count;
+}
+
+int main()
+{
+    int num, digit;
+    scanf("%d", &num);
+    scanf("%d", &digit);
+
+    int count = count_digit_occurrences(num, digit);
+    printf("The digit %d occurs %d times in the number %d.\n", digit, count, num);
+
+    return 0;
+}
+
