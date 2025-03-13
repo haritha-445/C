@@ -1,0 +1,49 @@
+#include<stdio.h>
+struct node
+{
+    int data;
+    struct node*next,*prev;
+};
+struct node*head=NULL,*tail=NULL,*newnode,*temp;
+void dll(int num)
+{
+    newnode=(struct node*)malloc(sizeof(struct node));
+    newnode->data=num;
+    newnode->next=NULL;
+    newnode->prev=NULL;
+    if(head==NULL)
+    {
+        head=tail=newnode;
+    }
+    else
+    {
+        tail->next=newnode;
+        newnode->prev=tail;
+        tail=newnode;
+    }
+}
+void display()
+{
+    temp=head;
+    while(temp->next!=NULL)
+
+    {
+        printf("%d",temp->data);
+        temp=temp->next;
+    }
+    printf("%d\n",temp->data);
+    temp=tail;
+    while(temp->prev!=NULL)
+{
+    printf("%d",temp->data);
+    temp=temp->prev;
+}
+ printf("%d",temp->data);
+}
+int main()
+{
+    dll(10);
+    dll(20);
+    dll(30);
+    display();
+}
